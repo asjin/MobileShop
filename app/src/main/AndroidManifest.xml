@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.huatec.edu">
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <application
+        android:allowBackup="true"
+        android:name=".common.MobileShopApp"
+        android:icon="@mipmap/hi"
+        android:label="@string/app_name"
+
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".activity.SplashActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".activity.AdActivity"></activity>
+        <activity android:name=".activity.MainActivity"></activity>
+        <activity android:name=".activity.LoginActivity"></activity>
+
+        <activity android:name=".activity.MyOrderActivity"></activity>
+        <activity android:name=".activity.MyCollectActivity"></activity>
+        <activity android:name=".activity.MyAddressActivity"></activity>
+        <activity android:name=".activity.ChangePwdActivity"></activity>
+
+        <activity android:name=".activity.GoodsListActivity"></activity>
+
+        <activity android:name=".activity.GoodsDetailActivity"></activity>
+    </application>
+
+</manifest>

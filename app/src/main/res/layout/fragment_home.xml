@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dip"
+        android:background="#ffda434e"
+        android:orientation="horizontal"
+        android:paddingTop="4dp">
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/logo"
+            android:layout_weight="1"
+            android:paddingLeft="10dp"
+            android:paddingTop="3dp"
+            android:src="@drawable/logo"/>
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="31dp"
+            android:layout_weight="4"
+            android:id="@+id/home_title_search"
+            android:background="@drawable/home_top_search_background">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/iv_search"
+                android:layout_marginLeft="10.0dp"
+                android:layout_centerVertical="true"
+                android:src="@drawable/icon_search"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/home_search"
+                android:layout_marginLeft="10.0dp"
+                android:layout_marginRight="2.0dp"
+                android:layout_toRightOf="@+id/iv_search"
+                android:background="#00000000"
+                android:gravity="center_vertical"
+                android:hint="搜索商品"
+                android:paddingBottom="2.0dp"
+                android:paddingRight="20.0dp"
+                android:paddingTop="2.0dp"
+                android:textColor="#ffb6b6b6"
+                android:textSize="14.0dp"/>
+        </RelativeLayout>
+    </LinearLayout>
+
+    <android.support.v4.widget.SwipeRefreshLayout
+        android:id="@+id/swipe_refresh_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.huatec.edu.view.MyWebView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/webView">
+        </com.huatec.edu.view.MyWebView>
+    </android.support.v4.widget.SwipeRefreshLayout>
+
+
+
+
+
+</LinearLayout>
