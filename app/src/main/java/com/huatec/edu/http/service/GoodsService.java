@@ -1,5 +1,6 @@
 package com.huatec.edu.http.service;
 
+import com.huatec.edu.http.entity.GoodsDetailEntity;
 import com.huatec.edu.http.entity.GoodsEntity;
 import com.huatec.edu.http.entity.HttpResult;
 
@@ -15,6 +16,17 @@ import rx.Observable;
 
 public interface GoodsService {
 
+    /*
+    * 获取商品详情
+    * @param goodsId
+    * @return
+    *
+    * */
+    @GET("goods/union/{goodsId}")
+    Observable<HttpResult<GoodsDetailEntity>> goodsDetail (
+            @Path("goodsId") int goodsId
+    );
+
     @FormUrlEncoded
     @POST("goods/find")
     Observable<HttpResult<List<GoodsEntity>>> listByKeywords(
@@ -27,6 +39,7 @@ public interface GoodsService {
     * @param catId
     * @return
     * */
+
     @GET("goods/cat/{catId}")
     Observable<HttpResult<List<GoodsEntity>>> list(
             @Path("catId") int catId

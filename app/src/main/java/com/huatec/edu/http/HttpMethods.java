@@ -4,6 +4,7 @@ package com.huatec.edu.http;
 import android.util.Log;
 
 import com.huatec.edu.common.Constants;
+import com.huatec.edu.http.entity.GoodsDetailEntity;
 import com.huatec.edu.http.entity.HttpResult;
 import com.huatec.edu.http.entity.MemberEntity;
 import com.huatec.edu.http.presenter.MemberPresenter;
@@ -32,6 +33,7 @@ public class HttpMethods {
     protected static GoodsService goodsService;
     protected static MemberService memberService;
     protected static CategoryService categoryService;
+
     private Retrofit retrofit;
 
     public HttpMethods(){
@@ -51,6 +53,7 @@ public class HttpMethods {
             goodsService = retrofit.create(GoodsService.class);
             memberService = retrofit.create(MemberService.class);
             categoryService = retrofit.create(CategoryService.class);
+
         }
     }
 

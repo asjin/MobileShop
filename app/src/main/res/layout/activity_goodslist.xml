@@ -76,14 +76,14 @@
                     android:layout_centerInParent="true"
                     android:text="销量"
                     android:textColor="#7c7c7c"
-                    android:textSize="15sp"/>
+                    android:textSize="15sp" />
 
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="5dp"
                     android:scaleType="centerInside"
-                    android:src="@drawable/sort_button_price_none"/>
+                    android:src="@drawable/sort_button_price_none" />
             </LinearLayout>
         </RelativeLayout>
 
@@ -91,6 +91,7 @@
             android:layout_width="1px"
             android:layout_height="match_parent"
             android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"
             android:background="#e5e5e5" />
 
         <RelativeLayout
@@ -111,14 +112,14 @@
                     android:layout_centerInParent="true"
                     android:text="评价"
                     android:textColor="#7c7c7c"
-                    android:textSize="15sp"/>
+                    android:textSize="15sp" />
 
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="5dp"
                     android:scaleType="centerInside"
-                    android:src="@drawable/sort_button_price_none"/>
+                    android:src="@drawable/sort_button_price_none" />
             </LinearLayout>
         </RelativeLayout>
 
@@ -146,14 +147,14 @@
                     android:layout_height="wrap_content"
                     android:text="价格"
                     android:textColor="#7c7c7c"
-                    android:textSize="15sp"/>
+                    android:textSize="15sp" />
 
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="5dp"
                     android:scaleType="centerInside"
-                    android:src="@drawable/sort_button_price_none"/>
+                    android:src="@drawable/sort_button_price_none" />
             </LinearLayout>
         </RelativeLayout>
 
@@ -182,16 +183,17 @@
                     android:layout_centerInParent="true"
                     android:text="新品"
                     android:textColor="#7c7c7c"
-                    android:textSize="15sp"/>
+                    android:textSize="15sp" />
 
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="5dp"
                     android:scaleType="centerInside"
-                    android:src="@drawable/sort_button_price_none"/>
+                    android:src="@drawable/sort_button_price_none" />
             </LinearLayout>
         </RelativeLayout>
+    </LinearLayout>
 
         <View
             android:layout_width="match_parent"
@@ -208,22 +210,21 @@
                 android:layout_height="match_parent">
                 <!--商品列表-->
                 <android.support.v7.widget.RecyclerView
+                    android:id="@+id/goodslist_recyclerview"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:id="@+id/goodslist_recyclerview"
                     android:background="@color/white"
                     android:smoothScrollbar="true" />
 
                 <!--商品列表为空时现实的内容-->
                 <TextView
+                    android:id="@+id/goodslist_nodata"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:id="@+id/goodslist_nodata"
-                    android:layout_gravity="center"
+                    android:gravity="center"
                     android:text="抱歉，没有符合条件的商品"
-                    android:visibility="visible"/>
+                    android:visibility="visible" />
             </FrameLayout>
         </android.support.v4.widget.SwipeRefreshLayout>
     </LinearLayout>
 
-</LinearLayout>

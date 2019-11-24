@@ -1,7 +1,10 @@
 package com.huatec.edu.fragment;
 
 import android.app.Activity;
+import android.content.BroadcastReceiver;
+import android.content.Context;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.support.annotation.Nullable;
 import android.view.View;
 import android.widget.ImageView;
@@ -15,6 +18,7 @@ import com.huatec.edu.activity.MyAddressActivity;
 import com.huatec.edu.activity.MyCollectActivity;
 import com.huatec.edu.activity.MyOrderActivity;
 import com.huatec.edu.common.BaseFragment;
+import com.huatec.edu.common.Constants;
 import com.huatec.edu.utils.SystemCofig;
 import com.nostra13.universalimageloader.core.ImageLoader;
 
@@ -44,6 +48,8 @@ public class PersonalFragment extends BaseFragment {
     @BindView(R.id.person_logout_layout)
     RelativeLayout person_logout_layout;
 
+    private BroadcastReceiver receiver;
+
     @Override
     public int getContentViewId(){
         return R.layout.fragment_personal;
@@ -52,8 +58,26 @@ public class PersonalFragment extends BaseFragment {
     @OnClick
     public void initView(View view){
         super.initView(view);
+        registerLoginReceiver();
         //初始化配置
         resetUI();
+    }
+
+    private void registerLoginReceiver(){
+        IntentFilter filter =new IntentFilter();
+        filter.addAction(Constants.ACTION_LOGIN);
+        receiver = new BroadcastReceiver() {
+            @Override
+            public void onReceive(Context context, Intent intent) {
+                resetUI();
+            }
+        };
+        getActivity().registerReceiver(receiver,filter);
+    }
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        getActivity().unregisterReceiver(receiver);
     }
 
     private void resetUI(){

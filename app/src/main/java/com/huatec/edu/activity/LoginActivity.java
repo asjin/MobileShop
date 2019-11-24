@@ -1,5 +1,6 @@
 package com.huatec.edu.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AlertDialog;
@@ -12,6 +13,7 @@ import android.widget.Toast;
 
 import com.huatec.edu.R;
 import com.huatec.edu.common.BaseActivity;
+import com.huatec.edu.common.Constants;
 import com.huatec.edu.http.ProgressDialogSubscriber;
 import com.huatec.edu.http.entity.MemberEntity;
 import com.huatec.edu.http.presenter.MemberPresenter;
@@ -62,11 +64,21 @@ public class LoginActivity extends BaseActivity{
                 SystemCofig.setLoginUserName(memberEntity.uname);
                 SystemCofig.setLoginUserEmail(memberEntity.email);
                 SystemCofig.setLoginUserHead(memberEntity.image);
+
+                sendLoginBroadcast();
+
                 //返回数据，只有调用了setResult，在调用的地方才会回调onActivityResult方法
                 setResult(RESULT_OK);
                 finish();
             }
         },userName,pwd);
+    }
+
+    private void sendLoginBroadcast(){
+        Intent intent = new Intent();
+        intent.setAction(Constants.ACTION_LOGIN);
+        intent.putExtra("my_data","这是数据");
+        sendBroadcast(intent);
     }
 
 }

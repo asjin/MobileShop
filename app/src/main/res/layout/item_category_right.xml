@@ -18,7 +18,7 @@
         android:id="@+id/tv_name"
         android:layout_marginTop="2dp"
         android:ellipsize="end"
-        android:layout_gravity="center_horizontal"
+        android:gravity="center_horizontal"
         android:maxEms="6"
         android:maxLines="2"
         android:textColor="#252525"
